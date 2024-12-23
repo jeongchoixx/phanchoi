@@ -20,11 +20,32 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Kotlin
 	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
 	implementation 'org.jetbrains.kotlin:kotlin-reflect'
+
+	// LOG
+	implementation 'io.github.microutils:kotlin-logging:3.0.5'
+	implementation 'ch.qos.logback:logback-classic:1.4.12'
+
+	// JWT Authentication
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	// RDB
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	// SOLANA RPC
+//	implementation 'org.p2p.solanaj:solanaj:1.11.13'
+	implementation 'com.portto.solana:web3:0.1.3'
+
+	// Configuration set up
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.jetbrains.kotlin:kotlin-test-junit5'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
